@@ -1,3 +1,5 @@
-## Welcome to XinKingBo ~~1206~~ 807
+## Welcome to Club de Monte Carlo
 
-我们的 **新金博`807`** 实在是<u>太厉害了</u>
+Monte Carlo est un quartier, un casino, une méthode, notre laboratoire et notre club.
+
+我们的 **蒙特卡罗俱乐部** 实在是<u>太厉害了</u>
