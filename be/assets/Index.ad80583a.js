@@ -1,1 +1,0 @@
-import{_ as e}from"./index.adb5cee7.js";import{o as _,c}from"./vendor.cab5376a.js";const r={};function a(n,o){return _(),c("h1",null,"Blocks")}var d=e(r,[["render",a],["__scopeId","data-v-0c56765d"]]);export{d as default};
