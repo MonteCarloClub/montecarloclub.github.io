@@ -1,0 +1,1 @@
+import{o as a,c as n,d as e,t as s,F as r}from"./vendor.151eab8e.js";const o=e("h1",null,"\u533A\u5757\u8BE6\u60C5",-1),i={props:{height:String},setup(t){return(l,_)=>(a(),n(r,null,[o,e("h2",null,s(t.height),1)],64))}};export{i as default};

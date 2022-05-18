@@ -1,0 +1,1 @@
+import{o as a,c as s,d as e,t as n,F as r}from"./vendor.151eab8e.js";const o=e("h1",null,"\u4EA4\u6613\u8BE6\u60C5",-1),u={props:{hash:String},setup(t){return(l,_)=>(a(),s(r,null,[o,e("h2",null,n(t.hash),1)],64))}};export{u as default};
