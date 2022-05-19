@@ -1,1 +1,0 @@
-import{o as t,c as a,d as e,t as n,F as r}from"./vendor.151eab8e.js";const o=e("h1",null,"\u5730\u5740\u8BE6\u60C5",-1),d={props:{address:String},setup(s){return(l,_)=>(t(),a(r,null,[o,e("h2",null,n(s.address),1)],64))}};export{d as default};
