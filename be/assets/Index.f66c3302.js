@@ -1,0 +1,1 @@
+import{_ as s}from"./index.be8273c2.js";import{o as t,c as o,d as e,t as _,F as r,p as c,b as p}from"./vendor.a082a7f9.js";const n=a=>(c("data-v-a3a78a36"),a=a(),p(),a),d=n(()=>e("h1",null,"\u4EA4\u6613\u8BE6\u60C5",-1)),l={props:{hash:String},setup(a){return(u,h)=>(t(),o(r,null,[d,e("h2",null,_(a.hash),1)],64))}};var v=s(l,[["__scopeId","data-v-a3a78a36"]]);export{v as default};
