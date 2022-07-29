@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>概率模拟可视化</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./import/element-ui/element.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="background">
+        <img src="./images/ZZX.jpg" alt="qr" />
+      </div>
+      <div class="time">
+        <span>{{ left }}</span>
+        <span class="seconds">{{ right }}</span>
+      </div>
+      <div class="hour">
+        24
+      </div>
+      <div class="bar">
+        {{ top }}
+      </div>
+    </div>
+  </body>
+
+  <!-- import Vue before Element -->
+  <script src="./import/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="./import/element-ui/element.js"></script>
+
+  <!-- run main scripts -->
+  <script>
+    // 获取当前时间函数
+    function getCurrentTimer(format1, format2) {
+      const time = new Date();
+      const year = time.getFullYear();
+      const obj = {
+        month: time.getMonth(),
+        date: time.getDate(),
+        hour: time.getHours(),
+        minutes: time.getMinutes(),
+        seconds: time.getSeconds(),
+      };
+      for (let key in obj) {
+        if (key === "month") {
+          obj[key] = obj[key] + 1;
+        }
+        if (obj[key] < 10) {
+          obj[key] = "0" + obj[key];
+        }
+      }
+      return {
+        top: obj.hour + format2 + obj.minutes,
+        left:
+          year +
+          format1 +
+          obj.month +
+          format1 +
+          obj.date +
+          " " +
+          obj.hour +
+          format2 +
+          obj.minutes +
+          format2,
+        right: obj.seconds,
+      };
+    }
+
+    new Vue({
+      el: "#app",
+      data: function () {
+        return {
+          ...getCurrentTimer("-", ":"),
+        };
+      },
+      watch: {
+        isHot: {
+          immediate: true, //初始化时让handler调用一下
+          //handler什么时候调用？当isHot发生改变时。（一个参数就是newValue）
+          handler(newValue, oldValue) {
+            console.log("isHot被修改了", newValue, oldValue);
+          },
+        },
+      },
+      methods: {},
+      mounted() {
+        setInterval(() => {
+          const { top, left, right } = getCurrentTimer("-", ":");
+          this.top = top;
+          this.left = left;
+          this.right = right;
+        }, 1000);
+      },
+    });
+  </script>
+</html>
