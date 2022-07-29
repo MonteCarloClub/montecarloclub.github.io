@@ -1,7 +1,7 @@
 #app{
     position: absolute;
-    top: -101px;
-    bottom: 101px;
+    top: -88px;
+    bottom: 88px;
     left: 0;
     right: 0;
 }
@@ -17,7 +17,7 @@
 }
 
 .time {
-    top: 36%;
+    top: 30%;
     left: 50%;
     width: 80%;
     text-align: center;
@@ -27,8 +27,8 @@
 }
 
 .hour {
-    top: 75.4%;
-    left: 22%;
+    top: 74%;
+    left: 24%;
     font-size: 38px;
     width: 60px;
     font-weight: bold;
