@@ -22,12 +22,8 @@
         <span>{{ left }}</span>
         <span class="seconds">{{ right }}</span>
       </div>
-      <div class="hour">
-        24
-      </div>
-      <div class="bar">
-        {{ top }}
-      </div>
+      <div class="hour">24</div>
+      <div class="bar">{{ top }}</div>
     </div>
   </body>
 
@@ -38,6 +34,26 @@
 
   <!-- run main scripts -->
   <script>
+    function toggleFullScreen() {
+      var doc = window.document;
+      var docEl = doc.documentElement;
+
+      var requestFullScreen =
+        docEl.requestFullscreen ||
+        docEl.mozRequestFullScreen ||
+        docEl.webkitRequestFullScreen ||
+        docEl.msRequestFullscreen;
+        
+      if (
+        !doc.fullscreenElement &&
+        !doc.mozFullScreenElement &&
+        !doc.webkitFullscreenElement &&
+        !doc.msFullscreenElement
+      ) {
+        requestFullScreen.call(docEl);
+      }
+    }
+
     // 获取当前时间函数
     function getCurrentTimer(format1, format2) {
       const time = new Date();
@@ -79,7 +95,7 @@
       data: function () {
         return {
           ...getCurrentTimer("-", ":"),
-          toggle: true
+          toggle: true,
         };
       },
       watch: {
@@ -94,7 +110,8 @@
       methods: {
         toggleEye() {
           this.toggle = !this.toggle;
-        }
+          toggleFullScreen();
+        },
       },
       mounted() {
         setInterval(() => {
