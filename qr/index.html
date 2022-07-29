@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>概率模拟可视化</title>
+    <title>去TMD健康码</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -14,8 +14,9 @@
 
   <body>
     <div id="app">
-      <div class="background">
-        <img src="./images/ZZX.jpg" alt="qr" />
+      <div class="background" v-on:click="toggleEye">
+        <img v-if="toggle" src="./images/ZZX.png" alt="qr" />
+        <img v-else src="./images/ZZX_.png" alt="qr" />
       </div>
       <div class="time">
         <span>{{ left }}</span>
@@ -78,6 +79,7 @@
       data: function () {
         return {
           ...getCurrentTimer("-", ":"),
+          toggle: true
         };
       },
       watch: {
@@ -89,7 +91,11 @@
           },
         },
       },
-      methods: {},
+      methods: {
+        toggleEye() {
+          this.toggle = !this.toggle;
+        }
+      },
       mounted() {
         setInterval(() => {
           const { top, left, right } = getCurrentTimer("-", ":");
