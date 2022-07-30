@@ -13,17 +13,16 @@
         <img v-if="toggle" src="./images/on.png" alt="qr" />
         <img v-else src="./images/off.png" alt="qr" />
       </div>
-      <div class="debug">
-        <input type="text" v-model="deLeft">
-        <input type="text" v-model="deTop">
+      <div class="debug" v-if="debug">
+        <div>24 小时</div>
+        <div>左边距：<input type="text" v-model="deLeft" />%</div>
+        <div>上边距：<input type="text" v-model="deTop" />%</div>
       </div>
       <div class="time">
         <span>{{ left }}</span>
         <span class="seconds">{{ right }}</span>
       </div>
-      <div class="hour"
-          :style="{ left: deLeft + '%', top: deTop + '%' }"
-        >
+      <div class="hour" :style="{ left: deLeft + '%', top: deTop + '%' }">
         24
       </div>
     </div>
@@ -43,7 +42,7 @@
         docEl.mozRequestFullScreen ||
         docEl.webkitRequestFullScreen ||
         docEl.msRequestFullscreen;
-        
+
       if (
         !doc.fullscreenElement &&
         !doc.mozFullScreenElement &&
@@ -96,8 +95,9 @@
         return {
           ...getCurrentTimer("-", ":"),
           toggle: true,
-          deLeft: 20,
-          deTop: 79.3,
+          deLeft: 19,
+          deTop: 78.5,
+          debug: false
         };
       },
       watch: {
