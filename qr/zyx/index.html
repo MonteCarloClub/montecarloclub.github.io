@@ -9,21 +9,32 @@
 
   <body>
     <div id="app">
-      <div class="background" v-on:click="toggleEye">
+      <div class="background">
         <img v-if="toggle" src="./images/on.png" alt="qr" />
         <img v-else src="./images/off.png" alt="qr" />
       </div>
-      <div class="debug" v-if="debug">
-        <div>24 小时</div>
-        <div>左边距：<input type="text" v-model="deLeft" />%</div>
-        <div>上边距：<input type="text" v-model="deTop" />%</div>
+      <div class="debug" v-if="debugHour">
+        <div>左边距：<input type="text" v-model="hourLeft" />%</div>
+        <div>上边距：<input type="text" v-model="hourTop" />%</div>
       </div>
-      <div class="time">
+      <div class="time" v-on:click="toggleEye">
         <span>{{ left }}</span>
         <span class="seconds">{{ right }}</span>
       </div>
-      <div class="hour" :style="{ left: deLeft + '%', top: deTop + '%' }">
+      <div class="hour" :style="{ left: hourLeft + '%', top: hourTop + '%' }" v-on:click="toggleHourDebug">
         24
+      </div>
+      <div class="debug" v-if="placeDialog">
+        <div>上边距：<input type="text" v-model="placeTop" /> %</div>
+        <div>主标题：<input type="text" v-model="title" /></div>
+        <div>副标题：<input type="text" v-model="subTitle" /></div>
+        <div style="flex-flow: row-reverse;">
+          <div class="button" v-on:click="placeDialog = false">确定</div>
+        </div>
+      </div>
+      <div class="place" :style="{ top: placeTop + '%' }" v-on:click="togglePlaceDebug">
+        <div class="title"> {{ title }} </div>
+        <div class="subTitle">{{ subTitle }}</div>
       </div>
     </div>
   </body>
@@ -95,9 +106,13 @@
         return {
           ...getCurrentTimer("-", ":"),
           toggle: true,
-          deLeft: 19,
-          deTop: 78.5,
-          debug: false
+          hourLeft: 19,
+          hourTop: 78.5,
+          debugHour: false,
+          placeTop: 64.5,
+          placeDialog: false,
+          title: '大诚花苑-北门',
+          subTitle: '上海市/杨浦区/五角场街道',
         };
       },
       watch: {
@@ -113,6 +128,12 @@
         toggleEye() {
           this.toggle = !this.toggle;
           toggleFullScreen();
+        },
+        toggleHourDebug() {
+          this.debugHour = !this.debugHour
+        },
+        togglePlaceDebug() {
+          this.placeDialog = !this.placeDialog
         },
       },
       mounted() {
