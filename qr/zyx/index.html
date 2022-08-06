@@ -26,13 +26,14 @@
       </div>
       <div class="debug" v-if="placeDialog">
         <div>上边距：<input type="text" v-model="placeTop" /> %</div>
+        <div>左右边距：<input type="text" v-model="placeLeftRight" /> %</div>
         <div>主标题：<input type="text" v-model="title" /></div>
         <div>副标题：<input type="text" v-model="subTitle" /></div>
         <div style="flex-flow: row-reverse;">
           <div class="button" v-on:click="placeDialog = false">确定</div>
         </div>
       </div>
-      <div class="place" :style="{ top: placeTop + '%' }" v-on:click="togglePlaceDebug">
+      <div class="place" :style="{ top: placeTop + '%', left: placeLeftRight + '%', right: placeLeftRight + '%' }" v-on:click="togglePlaceDebug">
         <div class="title"> {{ title }} </div>
         <div class="subTitle">{{ subTitle }}</div>
       </div>
@@ -106,10 +107,11 @@
         return {
           ...getCurrentTimer("-", ":"),
           toggle: true,
-          hourLeft: 19,
-          hourTop: 78.5,
+          hourLeft: 23.8,
+          hourTop: 73.6,
           debugHour: false,
           placeTop: 64.5,
+          placeLeftRight: 10,
           placeDialog: false,
           title: '大诚花苑-北门',
           subTitle: '上海市/杨浦区/五角场街道',
