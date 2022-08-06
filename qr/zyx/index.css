@@ -1,0 +1,71 @@
+#app{
+    position: absolute;
+    top: -88px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+}
+
+.time {
+    top: 30%;
+    left: 50%;
+    width: 80%;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    transform: translateX(-50%);
+}
+
+.hour {
+    top: 78.5%;
+    left: 19%;
+    font-size: 44px;
+    width: 60px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    color: #48bc69;
+    transform: translateX(-50%);
+}
+
+.debug {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.debug input {
+    padding: 0;
+    width: 90px;
+    font-size: 20px;
+    margin: 0 6px;
+    text-align: center;
+}
+
+.debug > div {
+    margin: 3px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time .seconds {
+    font-size: larger;
+    font-weight: bold;
+}
