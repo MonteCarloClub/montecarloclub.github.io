@@ -1,1 +1,0 @@
-import{_ as o}from"./index.dc65e433.js";import{o as a,c as _,d as e,t as c,B as r}from"./vendor.08ac5dc4.js";const d={class:"desc"},i={class:"title"},n={class:"buttons"},l={props:{title:String},setup(t){return(s,p)=>(a(),_("div",d,[e("div",i,c(t.title),1),e("div",n,[r(s.$slots,"default",{},void 0,!0)])]))}};var f=o(l,[["__scopeId","data-v-39ea2736"]]);export{f as T};
