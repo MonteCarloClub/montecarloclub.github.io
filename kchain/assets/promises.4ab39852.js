@@ -1,0 +1,1 @@
+const u=[{label:"\u5730\u5740",key:"address"},{label:"Nonce",key:"nonce"}];function r(t,i,s){const l=[...t];let n=0;function o(e){const a=l.shift();!a||e===t.length||(a.then(c=>{s(e,c),o(n)}),n++)}for(let e=0;e<i&&l.length>0;e++)o(n)}export{u as m,r as p};

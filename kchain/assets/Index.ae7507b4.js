@@ -1,0 +1,1 @@
+import{g as a,_ as s}from"./storage.6b3fe772.js";import{T as o}from"./Title.6b9fb196.js";import{h as r,C as n,o as i,d as c,e,u as f,F as m}from"./vendor.df1aa6d9.js";import"./index.fd6211ef.js";const x=r({setup(u){const t=n(a());return(d,l)=>(i(),c(m,null,[e(o,{title:"\u4EA4\u6613\u5217\u8868"}),e(s,{data:f(t)},null,8,["data"])],64))}});export{x as default};
